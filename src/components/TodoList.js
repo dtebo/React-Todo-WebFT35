@@ -14,9 +14,12 @@ const TodoList = (props) => {
     return(
         <>
             {todos && todos.map(todo => {
-                return <Todo key={todo.id} todo={todo} />
+                return <Todo
+                            key={todo.id}
+                            todo={todo}
+                        />
             })}
-            <TodoForm />
+            <TodoForm handleSubmit={props.handleSubmit} />
         </>
     );
 };

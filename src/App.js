@@ -15,11 +15,21 @@ class App extends React.Component {
 
   }
 
+  handleSubmit = (todo) => {
+    this.setState({
+      ...this.state,
+      todos: [...this.state.todos, { id: Date.now(), title: todo, completed: false}]
+    })
+  }
+
   render() {
     return (
       <div>
         <h1>TodoList</h1>
-        <TodoList todos={this.state.todos} />
+        <TodoList 
+          handleSubmit={this.handleSubmit}
+          todos={this.state.todos}
+        />
       </div>
     );
   }
