@@ -6,3 +6,17 @@
 .form-container form button{
     margin-left: 10px;
 }
+
+/*Todo Styles*/
+.todo {
+    font-weight: 800;
+    padding: 15px 10px;
+    margin: 10px;
+    background-color: rgb(240, 240, 160);
+    width: 30%;
+    cursor: pointer;
+}
+
+.todo.completed{
+    text-decoration: line-through;
+}

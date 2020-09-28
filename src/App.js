@@ -11,8 +11,20 @@ class App extends React.Component {
     todos
   };
 
-  togglePurchased = (id) => {
+  toggleCompleted = (id) => {
+    this.setState({
+      ...this.state,
+      todos: this.state.todos.map(todo => {
+        if(todo.id === id){
+          return {
+            ...todo,
+            completed: !todo.completed
+          }
+        }
 
+        return todo;
+      })
+    });
   }
 
   handleSubmit = (todo) => {
@@ -28,6 +40,7 @@ class App extends React.Component {
         <h1>TodoList</h1>
         <TodoList 
           handleSubmit={this.handleSubmit}
+          toggleCompleted={this.toggleCompleted}
           todos={this.state.todos}
         />
       </div>

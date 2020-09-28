@@ -12,15 +12,16 @@ const TodoList = (props) => {
     const {todos} = props;
 
     return(
-        <>
+        <div className='todo-list'>
             {todos && todos.map(todo => {
                 return <Todo
                             key={todo.id}
                             todo={todo}
+                            toggleCompleted={props.toggleCompleted}
                         />
             })}
             <TodoForm handleSubmit={props.handleSubmit} />
-        </>
+        </div>
     );
 };
 
