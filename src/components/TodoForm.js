@@ -5,21 +5,33 @@ class TodoForm extends Component{
         todo: ''
     };
 
+    handleSubmit = (e) => {
+        e.preventDefault();
+
+        //Pass todo back to the app component
+        this.props.handleSubmit(this.state.todo);
+    }
+
+    handleChange = (e) => {
+        this.setState({
+            ...this.state,
+            [e.target.name]: e.target.value
+        });
+    }
+
     render(){
         return(
             <div className='form-container'>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <input
                         type='text'
-                        id='title'
-                        name='title'
+                        id='todo'
+                        name='todo'
                         onChange={this.handleChange}
                         value={this.state.todo}
                         placeholder='Todo...'
                     />
-                    <button
-                        type='submit'
-                    >
+                    <button type='submit'>
                         Add Todo
                     </button>
                     <button>
