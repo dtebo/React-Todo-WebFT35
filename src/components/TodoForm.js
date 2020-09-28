@@ -34,7 +34,13 @@ class TodoForm extends Component{
                     <button type='submit'>
                         Add Todo
                     </button>
-                    <button>
+                    <button
+                        onClick={(e) => {
+                            e.preventDefault();
+                            
+                            this.props.clearCompleted();
+                        }}
+                    >
                         Clear Completed
                     </button>
                 </form>

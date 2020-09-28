@@ -20,7 +20,10 @@ const TodoList = (props) => {
                             toggleCompleted={props.toggleCompleted}
                         />
             })}
-            <TodoForm handleSubmit={props.handleSubmit} />
+            <TodoForm
+                handleSubmit={props.handleSubmit}
+                clearCompleted={props.clearCompleted}
+            />
         </div>
     );
 };
