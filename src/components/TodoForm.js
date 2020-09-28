@@ -7,7 +7,7 @@ class TodoForm extends Component{
 
     render(){
         return(
-            <>
+            <div className='form-container'>
                 <form>
                     <input
                         type='text'
@@ -17,8 +17,16 @@ class TodoForm extends Component{
                         value={this.state.todo}
                         placeholder='Todo...'
                     />
+                    <button
+                        type='submit'
+                    >
+                        Add Todo
+                    </button>
+                    <button>
+                        Clear Completed
+                    </button>
                 </form>
-            </>
+            </div>
         );
     }
 }
