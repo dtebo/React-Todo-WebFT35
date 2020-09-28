@@ -1,4 +1,5 @@
 import React from 'react';
+import TodoList from './components/TodoList';
 
 import { todos } from './data';
 
@@ -9,11 +10,16 @@ class App extends React.Component {
   state = {
     todos
   };
-  
+
+  togglePurchased = (id) => {
+
+  }
+
   render() {
     return (
       <div>
-        <h2>Welcome to your Todo App!</h2>
+        <h1>TodoList</h1>
+        <TodoList todos={this.state.todos} />
       </div>
     );
   }
